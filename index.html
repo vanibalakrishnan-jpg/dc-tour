@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>National Treasure DC Tour</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="header-seal">🦅</div>
+      <div class="header-text">
+        <h1>NATIONAL TREASURE</h1>
+        <p class="subtitle">Washington D.C. — The Ultimate Tour</p>
+      </div>
+      <div class="gps-badge" id="gpsBadge">
+        <span class="gps-dot"></span>
+        <span id="gpsStatus">Locating...</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-bar-wrap">
+    <div class="progress-label">Sites Discovered: <span id="visitedCount">0</span> / 10</div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div id="mapContainer">
+    <div id="map"></div>
+    <div id="mapOverlay" class="map-overlay">
+      <div class="compass">🧭</div>
+    </div>
+  </div>
+
+  <!-- SITE LIST -->
+  <section class="sites-section">
+    <h2 class="section-title">HIDDEN IN PLAIN SIGHT</h2>
+    <p class="section-sub">Tap a location to uncover its secrets</p>
+    <div class="sites-grid" id="sitesGrid"></div>
+  </section>
+
+  <!-- DETAIL MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-badge" id="modalBadge"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-movie" id="modalMovie"></p>
+      <div class="modal-divider"></div>
+      <div class="modal-tabs">
+        <button class="tab active" data-tab="history">HISTORY</button>
+        <button class="tab" data-tab="scene">IN THE FILM</button>
+        <button class="tab" data-tab="tips">VISIT TIPS</button>
+      </div>
+      <div class="tab-content" id="tabHistory"></div>
+      <div class="tab-content hidden" id="tabScene"></div>
+      <div class="tab-content hidden" id="tabTips"></div>
+      <div class="modal-nav">
+        <button class="nav-btn" id="prevSite">← Previous</button>
+        <button class="mark-btn" id="markVisited">Mark as Visited ✓</button>
+        <button class="nav-btn" id="nextSite">Next →</button>
+      </div>
+      <div class="modal-distance" id="modalDistance"></div>
+    </div>
+  </div>
+
+  <!-- LEAFLET MAP -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
