@@ -36,7 +36,17 @@
   <div id="mapContainer">
     <div id="map"></div>
     <div id="mapOverlay" class="map-overlay">
-      <div class="compass">🧭</div>
+      <div class="map-controls">
+        <div class="compass">🧭</div>
+        <button id="toggleRestaurants" class="map-toggle-btn" onclick="toggleRestaurants()">🌿 Hide Restaurants</button>
+        <div class="map-legend" id="mapLegend">
+          <div class="legend-item"><span class="legend-dot" style="border-color:#c9a84c;background:#1e1408;"></span>Tour Site</div>
+          <div class="legend-item"><span class="legend-dot" style="border-color:#6abf69;background:#1a2e14;"></span>Vegetarian</div>
+          <div class="legend-item"><span class="legend-dot" style="border-color:#e8a020;background:#2a1a00;"></span>Indian</div>
+          <div class="legend-item"><span class="legend-dot" style="border-color:#c060d0;background:#1a0a1a;"></span>Italian</div>
+          <div class="legend-item"><span class="legend-dot" style="border-color:#20a0d0;background:#001a2a;"></span>Mediterranean</div>
+        </div>
+      </div>
     </div>
   </div>
 

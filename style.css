@@ -204,7 +204,67 @@ header h1 {
   border-color: #6abf69;
 }
 
-.leaflet-popup-content-wrapper {
+.custom-marker.restaurant-marker {
+  background: #1a2e14;
+  border-color: #6abf69;
+  width: 36px !important;
+  height: 36px !important;
+}
+
+.map-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.map-toggle-btn {
+  background: rgba(100,180,90,0.2);
+  border: 1px solid #6abf69;
+  color: #a8e6a0;
+  padding: 6px 12px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  border-radius: 20px;
+  pointer-events: all;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+  white-space: nowrap;
+}
+
+.map-toggle-btn:hover { filter: brightness(1.15); }
+
+.map-legend {
+  background: rgba(10,7,2,0.82);
+  border: 1px solid var(--gold-dark);
+  border-radius: 6px;
+  padding: 8px 10px;
+  pointer-events: all;
+  backdrop-filter: blur(4px);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  color: var(--parchment-dark);
+  margin-bottom: 4px;
+}
+
+.legend-item:last-child { margin-bottom: 0; }
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid;
+  flex-shrink: 0;
+}
   background: var(--ink);
   border: 1px solid var(--gold);
   color: var(--parchment);

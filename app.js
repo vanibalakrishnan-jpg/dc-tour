@@ -225,6 +225,244 @@ const SITES = [
 ];
 
 // ============================================================
+//  RESTAURANTS — Vegetarian-Friendly near the tour
+// ============================================================
+const RESTAURANTS = [
+  {
+    name: "Founding Farmers DC",
+    emoji: "🌾",
+    lat: 38.9003,
+    lng: -77.0445,
+    rating: 4.5,
+    price: "$$",
+    vibe: "Farm-to-table American. Huge veggie menu, hearty portions, beautiful space near the White House.",
+    hours: "Mon–Fri 7am–10pm · Sat–Sun 8:30am–11pm",
+    phone: "+1 202-822-8783",
+    tip: "Breakfast here before hitting the Mall — their biscuits are legendary.",
+  },
+  {
+    name: "Immigrant Food",
+    emoji: "🌍",
+    lat: 38.8992,
+    lng: -77.0400,
+    rating: 4.4,
+    price: "$$",
+    vibe: "Globally inspired bowls and small plates right across from the White House. Many vegetarian choices with creative international flavors.",
+    hours: "Tue–Sat 11:30am–8pm · Mon & Sun until 3pm",
+    phone: "+1 202-888-0760",
+    tip: "Perfect lunch stop mid-tour — steps from the National Archives.",
+  },
+  {
+    name: "Teaism Penn Quarter",
+    emoji: "🍵",
+    lat: 38.8950,
+    lng: -77.0234,
+    rating: 4.5,
+    price: "$$",
+    vibe: "Asian-fusion tea house with extensive vegetarian and vegan options. Calm, quiet, great for a mid-tour break.",
+    hours: "Daily 11am–8pm",
+    phone: "+1 202-638-6010",
+    tip: "Near the National Archives and Library of Congress — ideal for a peaceful lunch.",
+  },
+  {
+    name: "Sweetgreen — Capitol Hill",
+    emoji: "🥗",
+    lat: 38.8870,
+    lng: -77.0027,
+    rating: 4.4,
+    price: "$$",
+    vibe: "Fresh salads and grain bowls, mostly vegetarian. Fast, reliable, and steps from the Library of Congress.",
+    hours: "Daily 10:30am–9pm",
+    phone: "+1 202-547-9338",
+    tip: "Great quick lunch between the Capitol and Library of Congress stops.",
+  },
+  {
+    name: "PLANTA Washington DC",
+    emoji: "🌱",
+    lat: 38.9057,
+    lng: -77.0478,
+    rating: 4.5,
+    price: "$$$",
+    vibe: "Upscale 100% plant-based restaurant. Inventive sushi, noodles, and stunning presentations. Ideal for a special dinner.",
+    hours: "Mon–Thu 11:30am–10pm · Fri 11:30am–11pm · Sat–Sun 11am–11pm",
+    phone: "+1 202-790-5972",
+    tip: "Book ahead for dinner — one of DC's top vegan fine-dining experiences.",
+  },
+  {
+    name: "DC Vegan",
+    emoji: "🌿",
+    lat: 38.9098,
+    lng: -77.0380,
+    rating: 4.5,
+    price: "$$",
+    vibe: "100% vegan comfort food: chick'n parm, eggplant dishes, baked goods. Cozy neighborhood spot in Dupont Circle.",
+    hours: "Mon–Thu 11am–9pm · Fri–Sat 11am–10pm · Sun 11am–9pm",
+    phone: "+1 202-297-0886",
+    tip: "Great dinner option in the Dupont Circle area, evening after the tour.",
+  },
+  {
+    name: "AMBAR Capitol Hill",
+    emoji: "🫙",
+    lat: 38.8820,
+    lng: -76.9954,
+    rating: 4.7,
+    price: "$$",
+    vibe: "Balkan tapas with outstanding veggie spreads (beet tzatziki, eggplant moussaka). All-you-can-eat lunch deal is incredible value.",
+    hours: "Mon–Thu 12pm–9:30pm · Fri–Sat 10am–10:30pm · Sun 10am–9:30pm",
+    phone: "+1 202-813-3039",
+    tip: "The $33 all-you-can-eat lunch is one of DC's best deals — veggie options are the stars.",
+  },
+  {
+    name: "Pavilion Café (Sculpture Garden)",
+    emoji: "☕",
+    lat: 38.8913,
+    lng: -77.0235,
+    rating: 3.9,
+    price: "$$",
+    vibe: "Casual café inside the National Gallery Sculpture Garden. Veggie sandwiches, quiche, and salads in a beautiful outdoor setting.",
+    hours: "Daily 10am–4pm",
+    phone: "+1 202-289-3360",
+    tip: "Perfectly located mid-Mall for a relaxed lunch break between monuments.",
+  },
+
+  // ── INDIAN ──────────────────────────────────────────────────
+  {
+    name: "Rasika",
+    emoji: "🪔",
+    lat: 38.8949,
+    lng: -77.0213,
+    rating: 4.3,
+    price: "$$$",
+    cuisine: "Indian",
+    vibe: "DC's most acclaimed Indian restaurant — Michelin-recommended. Modern, refined Indian cooking. The Palak Chaat and Dal Makhani are legendary. Steps from the National Archives.",
+    hours: "Lunch Mon–Fri 11:30am–2:30pm · Dinner daily from 5pm (closed Sat lunch)",
+    phone: "+1 202-637-1222",
+    tip: "Book ahead — this is one of the hardest reservations in DC. Perfect dinner after the Archives.",
+  },
+  {
+    name: "Rania",
+    emoji: "✨",
+    lat: 38.8956,
+    lng: -77.0268,
+    rating: 4.4,
+    price: "$$$",
+    cuisine: "Indian",
+    vibe: "Michelin-starred Indian fine dining. Stunning cocktails, artistic presentations, and a full vegetarian tasting menu. A truly special occasion restaurant.",
+    hours: "Dinner only Tue–Sat 5pm–9:30pm · Closed Mon & Sun",
+    phone: "+1 202-804-6434",
+    tip: "Ask for the vegetarian tasting menu — it's one of the best in the city.",
+  },
+  {
+    name: "Herbivore Indian Cuisine",
+    emoji: "🫛",
+    lat: 38.9115,
+    lng: -77.0652,
+    rating: 4.7,
+    price: "$$",
+    cuisine: "Indian",
+    vibe: "Vegetarian-forward Indian restaurant in Georgetown. Excellent dosas, biryanis, and curries in a relaxed, colorful setting. Great for families.",
+    hours: "Daily from 9am–9:30pm (Tue from 11am)",
+    phone: "+1 202-621-7502",
+    tip: "Try the masala dosa — crispy, fresh, and authentic. Great Georgetown dinner option.",
+  },
+
+  // ── ITALIAN ─────────────────────────────────────────────────
+  {
+    name: "Olio e Più",
+    emoji: "🫒",
+    lat: 38.8981,
+    lng: -77.0316,
+    rating: 4.7,
+    price: "$$$",
+    cuisine: "Italian",
+    vibe: "Beloved Italian spot near the White House with beautiful, fresh food. Outstanding pasta, seafood, and a lively atmosphere. Open late — great post-tour dinner.",
+    hours: "Mon–Thu 11am–midnight · Fri 11am–1am · Sat 10am–1am · Sun 10am–midnight",
+    phone: "+1 771-208-4815",
+    tip: "Walk-ins welcome late evening. Great for a relaxed dinner after a long day on the Mall.",
+  },
+  {
+    name: "Pines of Florence",
+    emoji: "🌲",
+    lat: 38.9056,
+    lng: -77.0443,
+    rating: 4.8,
+    price: "$$",
+    cuisine: "Italian",
+    vibe: "One of DC's highest-rated Italian restaurants. Homemade pastas, gluten-free options, halal meats. Warm, family-run feel. Regulars rave about every dish.",
+    hours: "Mon–Thu 12–10pm · Fri–Sun 2–10pm",
+    phone: "+1 202-450-1994",
+    tip: "Top pick for Italian — get any of the homemade pastas. Reservations strongly recommended.",
+  },
+  {
+    name: "Filomena Ristorante",
+    emoji: "🍝",
+    lat: 38.9044,
+    lng: -77.0626,
+    rating: 4.6,
+    price: "$$$",
+    cuisine: "Italian",
+    vibe: "A Georgetown institution for 40+ years. Handmade pastas, generous portions, and a wonderfully festive atmosphere. A celebration-worthy classic.",
+    hours: "Daily 11:30am–10:30pm (Fri–Sat until 11pm)",
+    phone: "+1 202-338-8800",
+    tip: "The pappardelle and ravioli are standouts. Great for a big group dinner in Georgetown.",
+  },
+
+  // ── MEDITERRANEAN ───────────────────────────────────────────
+  {
+    name: "Zaytinya",
+    emoji: "🧆",
+    lat: 38.8989,
+    lng: -77.0236,
+    rating: 4.5,
+    price: "$$$",
+    cuisine: "Mediterranean",
+    vibe: "José Andrés' iconic mezze restaurant. Turkish, Greek & Lebanese small plates — a vegetarian paradise. Bright, buzzy, and excellent value for the quality.",
+    hours: "Mon–Thu 11:30am–10pm · Fri 11:30am–11pm · Sat 11am–11pm · Sun 11am–10pm",
+    phone: "+1 202-638-0800",
+    tip: "Order the crispy eggplant, Brussels sprouts, and halloumi. Near Penn Quarter — great for lunch mid-tour.",
+  },
+  {
+    name: "Maydan",
+    emoji: "🔥",
+    lat: 38.9198,
+    lng: -77.0310,
+    rating: 4.6,
+    price: "$$$",
+    cuisine: "Mediterranean",
+    vibe: "Michelin-starred Lebanese restaurant with dramatic wood-fire cooking. Spectacular mezze spreads — the cauliflower and muhammara are unmissable. One of DC's most memorable dining experiences.",
+    hours: "Dinner daily 5–11pm · Sun brunch 11am–2pm",
+    phone: "+1 202-370-3696",
+    tip: "Book the Tawle communal tasting menu — an extraordinary vegetarian feast.",
+  },
+  {
+    name: "Agora DC",
+    emoji: "🫙",
+    lat: 38.9106,
+    lng: -77.0382,
+    rating: 4.6,
+    price: "$$",
+    cuisine: "Mediterranean",
+    vibe: "Turkish Mediterranean mezze in Dupont Circle. Cozy, warm atmosphere with outstanding pita bread, hummus, and shared plates. Great for groups.",
+    hours: "Tue–Fri from 12pm · Mon & Sat–Sun from 4:30–5pm",
+    phone: "+1 202-332-6767",
+    tip: "The pita bread alone is worth the trip. Great pre- or post-Masonic Memorial stop.",
+  },
+  {
+    name: "ala",
+    emoji: "🌙",
+    lat: 38.9081,
+    lng: -77.0437,
+    rating: 4.5,
+    price: "$$",
+    cuisine: "Mediterranean",
+    vibe: "Modern Turkish mezze in Dupont Circle. Creative, flavor-packed vegetarian hot plates and excellent pita. Relaxed outdoor seating and great cocktails.",
+    hours: "Tue–Fri 4–9pm (Fri until 10pm) · Sat–Sun 10am–10pm · Closed Mon",
+    phone: "N/A",
+    tip: "Order the vegetarian hot mezze and Adana burger. The kunafa dessert is incredible.",
+  },
+];
+
+// ============================================================
 //  STATE
 // ============================================================
 const visited = new Set(JSON.parse(localStorage.getItem("nt_visited") || "[]"));
@@ -232,6 +470,8 @@ let userLat = null, userLng = null;
 let currentSiteIndex = 0;
 let map, userMarker;
 const siteMarkers = [];
+let restaurantMarkers = [];
+let showRestaurants = true;
 
 // ============================================================
 //  MAP INIT
@@ -268,6 +508,62 @@ function initMap() {
     `);
     siteMarkers.push(marker);
   });
+
+  // Render restaurant markers
+  renderRestaurantMarkers();
+}
+
+// ============================================================
+//  RESTAURANTS ON MAP
+// ============================================================
+function renderRestaurantMarkers() {
+  restaurantMarkers.forEach(m => map.removeLayer(m));
+  restaurantMarkers = [];
+  if (!showRestaurants) return;
+
+  const cuisineColor = {
+    "Indian":        { bg: "#2a1a00", border: "#e8a020", label: "#f5c060" },
+    "Italian":       { bg: "#1a0a1a", border: "#c060d0", label: "#e0a0f0" },
+    "Mediterranean": { bg: "#001a2a", border: "#20a0d0", label: "#80d4f0" },
+    "default":       { bg: "#1a2e14", border: "#6abf69", label: "#a8e6a0" },
+  };
+
+  RESTAURANTS.forEach((r) => {
+    const c = cuisineColor[r.cuisine] || cuisineColor["default"];
+    const icon = L.divIcon({
+      className: "",
+      html: `<div class="custom-marker restaurant-marker" style="background:${c.bg};border-color:${c.border};"><span>${r.emoji}</span></div>`,
+      iconSize: [36, 36],
+      iconAnchor: [18, 36],
+      popupAnchor: [0, -40],
+    });
+    const marker = L.marker([r.lat, r.lng], { icon }).addTo(map);
+    const stars = "★".repeat(Math.round(r.rating)) + "☆".repeat(5 - Math.round(r.rating));
+    const cuisineTag = r.cuisine ? `<span style="background:${c.border};color:${c.bg};font-size:0.65rem;padding:1px 6px;border-radius:10px;font-family:'Cinzel',serif;font-weight:600;">${r.cuisine}</span> ` : "";
+    marker.bindPopup(`
+      <div class="popup-inner">
+        <strong>${r.emoji} ${r.name}</strong>
+        <p style="margin:4px 0;">${cuisineTag}<span style="color:${c.label};font-size:0.75rem;">${stars} ${r.rating} · ${r.price}</span></p>
+        <p style="font-size:0.78rem;color:#e8d9b5;margin:4px 0;">${r.vibe}</p>
+        <p style="font-size:0.72rem;color:#c9a84c;margin-top:4px;">⏰ ${r.hours}</p>
+        ${r.phone !== "N/A" ? `<p style="font-size:0.72rem;color:#c9a84c;">📞 ${r.phone}</p>` : ""}
+        <p style="font-size:0.72rem;font-style:italic;color:${c.label};margin-top:4px;">💡 ${r.tip}</p>
+      </div>
+    `);
+    restaurantMarkers.push(marker);
+  });
+}
+
+function toggleRestaurants() {
+  showRestaurants = !showRestaurants;
+  renderRestaurantMarkers();
+  const btn = document.getElementById("toggleRestaurants");
+  if (btn) {
+    btn.textContent = showRestaurants ? "🌿 Hide Restaurants" : "🌿 Show Restaurants";
+    btn.style.background = showRestaurants ? "rgba(100,180,90,0.2)" : "rgba(201,168,76,0.1)";
+    btn.style.borderColor = showRestaurants ? "#6abf69" : "var(--gold-dark)";
+    btn.style.color = showRestaurants ? "#a8e6a0" : "var(--gold)";
+  }
 }
 
 // ============================================================
