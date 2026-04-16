@@ -225,8 +225,59 @@ const SITES = [
 ];
 
 // ============================================================
-//  RESTAURANTS — Vegetarian-Friendly near the tour
+//  BONUS ATTRACTIONS (non-film sites worth visiting)
 // ============================================================
+const ATTRACTIONS = [
+  {
+    name: "National Air & Space Museum",
+    emoji: "🚀",
+    lat: 38.8882,
+    lng: -77.0198,
+    type: "Museum",
+    desc: "One of the world's most visited museums — home to the Wright Flyer, the Apollo 11 Command Module, and the Spirit of St. Louis. Right on the Mall.",
+    hours: "Daily 10am–5:30pm",
+    admission: "Free (timed-entry passes recommended)",
+    phone: "+1 202-633-2214",
+    tip: "Book timed-entry passes at si.edu in advance. Allow at least 3–4 hours — it's enormous and unmissable.",
+  },
+  {
+    name: "International Spy Museum",
+    emoji: "🕵️",
+    lat: 38.8841,
+    lng: -77.0256,
+    type: "Museum",
+    desc: "The world's largest collection of spy artifacts and gadgets. You get a secret identity at the door and go undercover through the exhibits. Perfect National Treasure energy!",
+    hours: "Daily 9am–7pm (Sat until 8pm)",
+    admission: "Paid — book online at spymuseum.org",
+    phone: "+1 202-393-7798",
+    tip: "Pairs perfectly with the National Treasure theme — real-life espionage history is just as thrilling as the film.",
+  },
+  {
+    name: "Smithsonian National Zoo",
+    emoji: "🐼",
+    lat: 38.9296,
+    lng: -77.0498,
+    type: "Zoo",
+    desc: "One of America's great free zoos, home to giant pandas, gorillas, elephants, and hundreds of species. Spread across 163 acres in the heart of D.C.",
+    hours: "Daily 8am–6pm",
+    admission: "Free! (parking fees apply)",
+    phone: "+1 202-633-2614",
+    tip: "Giant pandas Bao Li and Qing Bao are the stars — arrive early for the best viewing. Wear comfortable shoes — it's hilly!",
+  },
+  {
+    name: "The Escape Game DC",
+    emoji: "🔐",
+    lat: 38.8972,
+    lng: -77.0250,
+    type: "Experience",
+    desc: "Rated 5.0 stars — one of DC's best escape rooms right in Penn Quarter. Immersive themed rooms like Prison Break, Special Ops, and The Depths. Great for groups.",
+    hours: "Daily 8am–midnight",
+    admission: "Paid — book at theescapegame.com",
+    phone: "+1 202-301-4631",
+    tip: "Book in advance — slots fill up fast, especially on weekends. Perfect evening activity after a full day on the Mall.",
+  },
+];
+
 const RESTAURANTS = [
   {
     name: "Founding Farmers DC",
@@ -471,7 +522,9 @@ let currentSiteIndex = 0;
 let map, userMarker;
 const siteMarkers = [];
 let restaurantMarkers = [];
+let attractionMarkers = [];
 let showRestaurants = true;
+let showAttractions = true;
 
 // ============================================================
 //  MAP INIT
@@ -511,6 +564,8 @@ function initMap() {
 
   // Render restaurant markers
   renderRestaurantMarkers();
+  // Render attraction markers
+  renderAttractionMarkers();
 }
 
 // ============================================================
@@ -559,10 +614,61 @@ function toggleRestaurants() {
   renderRestaurantMarkers();
   const btn = document.getElementById("toggleRestaurants");
   if (btn) {
-    btn.textContent = showRestaurants ? "🌿 Hide Restaurants" : "🌿 Show Restaurants";
+    btn.textContent = showRestaurants ? "🍽️ Hide Restaurants" : "🍽️ Show Restaurants";
     btn.style.background = showRestaurants ? "rgba(100,180,90,0.2)" : "rgba(201,168,76,0.1)";
     btn.style.borderColor = showRestaurants ? "#6abf69" : "var(--gold-dark)";
     btn.style.color = showRestaurants ? "#a8e6a0" : "var(--gold)";
+  }
+}
+
+// ============================================================
+//  ATTRACTIONS ON MAP
+// ============================================================
+function renderAttractionMarkers() {
+  attractionMarkers.forEach(m => map.removeLayer(m));
+  attractionMarkers = [];
+  if (!showAttractions) return;
+
+  const typeColor = {
+    "Museum":     { bg: "#001a2a", border: "#4fc3f7", label: "#b3e5fc" },
+    "Zoo":        { bg: "#0a1a00", border: "#aed581", label: "#dcedc8" },
+    "Experience": { bg: "#1a0a00", border: "#ff8a65", label: "#ffccbc" },
+  };
+
+  ATTRACTIONS.forEach((a) => {
+    const c = typeColor[a.type] || { bg: "#1a1408", border: "#c9a84c", label: "#e8c96b" };
+    const icon = L.divIcon({
+      className: "",
+      html: `<div class="custom-marker attraction-marker" style="background:${c.bg};border-color:${c.border};"><span>${a.emoji}</span></div>`,
+      iconSize: [38, 38],
+      iconAnchor: [19, 38],
+      popupAnchor: [0, -42],
+    });
+    const marker = L.marker([a.lat, a.lng], { icon }).addTo(map);
+    marker.bindPopup(`
+      <div class="popup-inner">
+        <strong>${a.emoji} ${a.name}</strong>
+        <p style="margin:4px 0;"><span style="background:${c.border};color:${c.bg};font-size:0.65rem;padding:1px 6px;border-radius:10px;font-family:'Cinzel',serif;font-weight:600;">${a.type}</span></p>
+        <p style="font-size:0.78rem;color:#e8d9b5;margin:4px 0;">${a.desc}</p>
+        <p style="font-size:0.72rem;color:#c9a84c;margin-top:4px;">⏰ ${a.hours}</p>
+        <p style="font-size:0.72rem;color:#c9a84c;">🎟️ ${a.admission}</p>
+        <p style="font-size:0.72rem;color:#c9a84c;">📞 ${a.phone}</p>
+        <p style="font-size:0.72rem;font-style:italic;color:${c.label};margin-top:4px;">💡 ${a.tip}</p>
+      </div>
+    `);
+    attractionMarkers.push(marker);
+  });
+}
+
+function toggleAttractions() {
+  showAttractions = !showAttractions;
+  renderAttractionMarkers();
+  const btn = document.getElementById("toggleAttractions");
+  if (btn) {
+    btn.textContent = showAttractions ? "🎡 Hide Attractions" : "🎡 Show Attractions";
+    btn.style.background = showAttractions ? "rgba(79,195,247,0.15)" : "rgba(201,168,76,0.1)";
+    btn.style.borderColor = showAttractions ? "#4fc3f7" : "var(--gold-dark)";
+    btn.style.color = showAttractions ? "#b3e5fc" : "var(--gold)";
   }
 }
 
