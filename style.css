@@ -216,10 +216,12 @@ header h1 {
   height: 38px !important;
 }
 
+.map-controls {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 8px;
+  pointer-events: all;
 }
 
 .map-toggle-btn {
