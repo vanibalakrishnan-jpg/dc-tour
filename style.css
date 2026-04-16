@@ -211,7 +211,11 @@ header h1 {
   height: 36px !important;
 }
 
-.map-controls {
+.custom-marker.attraction-marker {
+  width: 38px !important;
+  height: 38px !important;
+}
+
   display: flex;
   flex-direction: column;
   align-items: flex-end;
